@@ -88,8 +88,12 @@ const config: Config = {
           title: 'Community',
           items: [
             {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/farmgpu',
+            },
+            {
               label: 'X',
-              href: 'https://x.com/farmgpu',
+              href: 'https://x.com/LebanonJon',
             },
           ],
         },
@@ -98,7 +102,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/farmgpu',
+              href: 'https://github.com/jmhands/ai-datacenter',
             },
           ],
         },
