@@ -31,20 +31,37 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'default',
+        path: 'docs',
+        routeBasePath: 'docs',
+        sidebarPath: require.resolve('./sidebars.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ai-datacenter',
+        path: 'ai-datacenter',
+        routeBasePath: 'ai-datacenter',
+        sidebarPath: require.resolve('./sidebars-ai-datacenter.ts'),
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
-      } satisfies Preset.Options,
+      },
     ],
   ],
 
@@ -61,9 +78,17 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'overview',
+          docId: 'Executive_Summary',
+          docsPluginId: 'default',
           position: 'left',
-          label: 'Documentation',
+          label: 'Company Docs',
+        },
+        {
+          type: 'doc',
+          docId: 'overview',
+          docsPluginId: 'ai-datacenter',
+          position: 'left',
+          label: 'AI Datacenters',
         },
         {
           href: 'https://github.com/your-org/ai-datacenter',
