@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'AI Datacenter',
+  title: 'FarmGPU',
   tagline: 'Your Gateway to AI Infrastructure',
   favicon: 'img/fgpu_green.svg',
 
@@ -18,7 +18,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'your-org', // Update this with your GitHub org/user name
-  projectName: 'ai-datacenter', // Updated project name
+  projectName: 'FarmGPU', // Updated project name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -69,9 +69,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'AI Datacenter',
+      title: 'FarmGPU',
       logo: {
-        alt: 'AI Datacenter Logo',
+        alt: 'FarmGPU Logo',
         src: 'img/fgpu_green.svg',
         srcDark: 'img/fgpu_white.svg',
       },
@@ -132,7 +132,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Farm GPU, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} FarmGPU, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
