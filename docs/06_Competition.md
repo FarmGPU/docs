@@ -16,6 +16,16 @@ These major cloud service providers offer a broad range of globally distributed 
 
 By focusing exclusively on GPU infrastructure for AI/ML, FarmGPU bypasses hyperscaler overhead, enabling pricing closer to true market rates. Our decentralized approach (via DePIN), combined with enterprise-grade data center standards, ensures reliable access to GPU resources without punitive vendor lock-in or unpredictable quotas.
 
+|                           | **Hyperscalers (AWS, Azure, GCP)**                                                        | **FarmGPU**                                                                                                |
+| ------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **GPU Pricing**           | On‑demand H100/H200 nodes priced 4 – 6 × above market; steep premiums for burst capacity. | Up to **70 % lower** hourly rates; deeper discounts on reserved and spot pools.                            |
+| **Availability & Quotas** | Regional GPU caps and lengthy quota‑increase tickets slow experimentation.                | Elastic pool sized for AI first—no artificial quotas, instant scale‑up.                                    |
+| **Platform Lock‑In**      | Proprietary APIs, managed services, and custom silicon make exit costly.                  | Open‑standards stack (Kubernetes, open storage, standard NICs); migrate in or out with minimal re‑tooling. |
+| **AI Hardware Density**   | Air‑cooled halls limit rack power; mixed‑workload layouts restrict floor space.           | 45 – 130 kW liquid / immersion‑cooled racks purpose‑built for accelerators.                                |
+| **TCO Transparency**      | Bundled egress, software and support fees obscure true training cost.                     | Simple, all‑in pricing—compute, storage, and network broken out clearly.                                   |
+| **Sustainability**        | Average PUE ≈ 1.3–1.5; limited heat‑reuse deployments.                                    | PUE ≈ 1.1, waste‑heat recovery in micro‑edge pods, renewable PPAs under way.                               |
+| **Specialized Support**   | Generic enterprise support teams; AI issues routed through multiple tiers.                | Direct line to NVIDIA / InfiniBand veterans and ML‑ops engineers.                                          |
+
 ## FarmGPU's Lean, GPU-Centric Model
 
 FarmGPU delivers cost-effective, scalable, and high-performance GPU computing to AI developers, startups, and enterprises.

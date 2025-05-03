@@ -17,8 +17,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-org', // Update this with your GitHub org/user name
-  projectName: 'FarmGPU', // Updated project name
+  organizationName: 'FarmGPU', // Update this with your GitHub org/user name
+  projectName: 'farmgpu-docs', // Updated project name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

@@ -1,16 +1,15 @@
 # Executive Summary
 
-FarmGPU is a pioneering provider of sustainable GPU hosting and AI infrastructure, catering to the increasing global demand for cost-effective, high-performance compute resources. By leveraging the power of decentralized physical infrastructure networks (DePIN) and partnering with key players like RunPod and Berkeley Compute, FarmGPU delivers affordable, scalable, and resilient AI computing solutions.
+FarmGPU is redefining the future of GPU-powered cloud computing by offering cost-effective, scalable, and high-performance GPU resources tailored specifically for AI developers, innovative startups, and enterprises worldwide. The FarmGPU Cloud Platform that consists of
 
-Our unique offering combines advanced liquid cooling systems for sustainability, high-speed networking tailored for AI workloads, and a flexible compute rental marketplace, catering to a wide range of users from startups to enterprise clients. Through a tokenized GPU model, we enable fractional ownership of GPU assets, providing decentralized income opportunities while democratizing access to AI infrastructure.
+**AI Data Center Blueprint**: We transform small to medium traditional data centers (5–20MW) into AI-ready facilities optimized for GPUs and accelerators. Features include high-power racks (45–130+ kW), 800G InfiniBand/ethernet with RDMA, and liquid/immersion cooling for maximized performance and energy efficiency.
 
-## Core Strengths
+**On-demand Compute Platform**: Deliver containers, VMs, and cloud-native workloads with GPUs in seconds, pay as you go, and access to powerful and cost effective GPU selection – up to **70% lower cost than AWS and Azure**. This is available on the RunPod Secure Cloud platform (US-CA-2).
 
-- **On-Demand Compute Rentals**: Leveraging DePIN platforms for fast, flexible access to GPUs that are significantly less expensive and better user experience vs major cloud providers
-- **Sustainable Infrastructure**: Liquid cooling and energy efficiency to minimize environmental impact of the increased demand for AI compute
-- **AI Clusters with High-Speed Networking**: Optimized for deep learning workloads and scalable GPU resource management.
+**Storage for AI**: Accelerate storage intensive training workloads with GPU-direct storage enabled for higher bandwidth from NVMe. Use of NVIDIA BlueField 3 DPUs offload CPU tasks for encryption, compression, and data protection to reduce TCO. Inference with native vectorDB integration allows enterprises to deploy private AI with access to company knowledge.
 
-## Strategic Partnerships
+We are pioneering a **Tokenized GPU** marketplace in partnership with Silicon Network, democratizing access to AI computing by tokenizing physical GPUs into NFTs, connecting owners, providers/data center operator, and customers.
 
-- FarmGPU is partnering with RunPod secure cloud to deliver on-demand GPU resources for AI developers and businesses.
-- Berkeley Compute brings innovative tokenization of GPU assets, creating unique investment opportunities and enhancing liquidity for GPU ownership and financial scalability
+Finally, we deploy immersion cooled micro edge data centers with Aero Edge, custom inference optimized design deployed at edge locations for sustainable operations leveraging heat reuse to deliver reduced operational costs.
+
+![FarmGPU Cloud Platform Architecture](/img/fgpu_cloud_platform.jpg)
