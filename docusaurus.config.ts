@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/fgpu_green.svg',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.farmgpu.net',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -18,7 +18,8 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'FarmGPU', // Update this with your GitHub org/user name
-  projectName: 'farmgpu-docs', // Updated project name
+  projectName: 'docs', // Updated project name
+  deploymentBranch: 'gh-pages', // The branch that GitHub Pages will deploy from
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -96,7 +97,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/your-org/ai-datacenter',
+          href: 'https://github.com/FarmGPU/docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -110,7 +111,7 @@ const config: Config = {
           items: [
             {
               label: 'Documentation',
-              to: '/docs/overview',
+              to: '/docs/Executive_Summary',
             },
           ],
         },
@@ -132,7 +133,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/jmhands/ai-datacenter',
+              href: 'https://github.com/FarmGPU/docs',
             },
           ],
         },
