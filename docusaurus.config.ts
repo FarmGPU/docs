@@ -91,6 +91,11 @@ const config: Config = {
           label: 'AI Datacenters',
         },
         {
+          label: 'Calculator',
+          href: 'https://calculator.farmgpu.net',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/your-org/ai-datacenter',
           label: 'GitHub',
           position: 'right',
