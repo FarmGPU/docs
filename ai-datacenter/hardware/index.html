@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai-datacenter docs-version-current docs-doc-page docs-doc-id-hardware" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Hardware and Component Specialization | FarmGPU</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.farmgpu.net/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.farmgpu.net/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.farmgpu.net/ai-datacenter/hardware"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-datacenter-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-datacenter-current"><meta data-rh="true" property="og:title" content="Hardware and Component Specialization | FarmGPU"><meta data-rh="true" name="description" content="The hardware foundation of AI data centers differs significantly from traditional facilities, driven by the need for massive parallel processing, high-bandwidth memory access, and extremely fast inter-component communication."><meta data-rh="true" property="og:description" content="The hardware foundation of AI data centers differs significantly from traditional facilities, driven by the need for massive parallel processing, high-bandwidth memory access, and extremely fast inter-component communication."><link data-rh="true" rel="icon" href="/img/fgpu_green.svg"><link data-rh="true" rel="canonical" href="https://docs.farmgpu.net/ai-datacenter/hardware"><link data-rh="true" rel="alternate" href="https://docs.farmgpu.net/ai-datacenter/hardware" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.farmgpu.net/ai-datacenter/hardware" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.d3f4eb79.css">
+<script src="/assets/js/runtime~main.8eec702b.js" defer="defer"></script>
+<script src="/assets/js/main.01e4399a.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/fgpu_green.svg"><link rel="preload" as="image" href="/img/fgpu_white.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/fgpu_green.svg" alt="FarmGPU Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/fgpu_white.svg" alt="FarmGPU Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">FarmGPU</b></a><a class="navbar__item navbar__link" href="/docs/Executive_Summary">Company Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/ai-datacenter/overview">AI Datacenters</a><a href="https://calculator.farmgpu.net" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Calculator<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/FarmGPU/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/overview">Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/introduction">Introduction: The AI-Driven Data Center Paradigm Shift</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/architecture">Architectural and Infrastructure Divergence</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/ai-datacenter/hardware">Hardware and Component Specialization</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/networking">Networking Technology in AI Data Centers</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/power">Power and Electrical</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/cooling">Data Center Cooling Evolution for AI</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/workloads">Workload Characteristics and Software Ecosystems</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/security">Security and Compliance Landscape</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/operations">Operational Management and Efficiency</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/economics">Economics, Trends, and Future Outlook</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/sources">Sources</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Hardware and Component Specialization</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Hardware and Component Specialization</h1></header>
+<blockquote>
+<p>The hardware foundation of AI data centers differs significantly from traditional facilities, driven by the need for massive parallel processing, high-bandwidth memory access, and extremely fast inter-component communication.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-processing-power-cpu-vs-gpu-tpu-and-custom-ai-accelerators">A. Processing Power: CPU vs. GPU, TPU, and Custom AI Accelerators<a href="#a-processing-power-cpu-vs-gpu-tpu-and-custom-ai-accelerators" class="hash-link" aria-label="Direct link to A. Processing Power: CPU vs. GPU, TPU, and Custom AI Accelerators" title="Direct link to A. Processing Power: CPU vs. GPU, TPU, and Custom AI Accelerators">​</a></h2>
+<p>Traditional data centers primarily rely on <strong>Central Processing Units (CPUs)</strong> (e.g., Intel Xeon, AMD EPYC):</p>
+<ul>
+<li>General-purpose processors</li>
+<li>Optimized for sequential or moderate parallelism</li>
+<li>Suitable for OS management, business apps, database queries, and network traffic</li>
+</ul>
+<p>AI-focused data centers are dominated by <strong>specialized accelerators</strong> for massively parallel computations:</p>
+<ul>
+<li><strong>Graphics Processing Units (GPUs):</strong>
+<ul>
+<li>E.g., NVIDIA H100, B100, GB200 series</li>
+<li>Thousands of compute cores for parallel operations</li>
+<li>Power-intensive (700W–1200W+ per chip)</li>
+</ul>
+</li>
+<li><strong>Tensor Processing Units (TPUs):</strong>
+<ul>
+<li>Google&#x27;s custom ASICs for ML workloads (TensorFlow, JAX)</li>
+<li>Optimized for performance per watt and TCO</li>
+<li>Used extensively in Google Cloud</li>
+</ul>
+</li>
+<li><strong>Other Custom Silicon (ASICs/NPUs):</strong>
+<ul>
+<li>AWS Trainium/Inferentia, Microsoft Maia, Meta MTIA</li>
+<li>Startups: Cerebras, SambaNova, etc.</li>
+<li>Neural Processing Units (NPUs) for real-time processing</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>AI accelerators are designed for matrix multiplication and tensor operations fundamental to deep learning.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="b-memory-architectures-dram-vs-hbm-capacity-bandwidth-and-cost">B. Memory Architectures: DRAM vs. HBM, Capacity, Bandwidth, and Cost<a href="#b-memory-architectures-dram-vs-hbm-capacity-bandwidth-and-cost" class="hash-link" aria-label="Direct link to B. Memory Architectures: DRAM vs. HBM, Capacity, Bandwidth, and Cost" title="Direct link to B. Memory Architectures: DRAM vs. HBM, Capacity, Bandwidth, and Cost">​</a></h2>
+<p>Traditional servers use <strong>DDR DRAM</strong> (DDR4/DDR5):</p>
+<ul>
+<li>Large capacities (hundreds of GBs to several TBs)</li>
+<li>Cost-effective for general workloads</li>
+<li>DRAM can be ~40% of server BOM</li>
+</ul>
+<p>AI accelerators require <strong>High Bandwidth Memory (HBM):</strong></p>
+<ul>
+<li>Stacked-die architecture (multiple DRAM dies vertically)</li>
+<li>Connected via TSVs directly to the accelerator chip</li>
+<li>Provides multi-terabyte/sec bandwidth</li>
+<li>More expensive per GB, lower capacity per stack</li>
+<li>HBM is a major cost driver for AI accelerators</li>
+</ul>
+<blockquote>
+<p>&quot;AI servers still employ large amounts of standard DDR DRAM (e.g., 2TB on an NVIDIA DGX H100), but its cost contribution is much smaller than HBM.&quot;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="c-server-design-form-factors-density-and-ai-specific-configurations">C. Server Design: Form Factors, Density, and AI-Specific Configurations<a href="#c-server-design-form-factors-density-and-ai-specific-configurations" class="hash-link" aria-label="Direct link to C. Server Design: Form Factors, Density, and AI-Specific Configurations" title="Direct link to C. Server Design: Form Factors, Density, and AI-Specific Configurations">​</a></h2>
+<p>Traditional data centers:</p>
+<ul>
+<li>Standard rackmount servers (1U/2U, 19-inch racks)</li>
+<li>Blade servers for density</li>
+<li>Emphasis on standardization, maintenance, maximizing server count within power/cooling limits</li>
+</ul>
+<p>AI servers:</p>
+<ul>
+<li>Larger form factors (e.g., NVIDIA DGX H100 = 8U)</li>
+<li>Accommodate multiple high-power accelerators, large heatsinks/cold plates, complex power delivery</li>
+<li>Heavier systems require higher load-rated racks</li>
+<li>Custom server/rack designs (e.g., Microsoft Ares for Maia chips)</li>
+<li>Goal: maximize accelerator density and high-speed communication efficiency</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>The primary design goal for AI servers is maximizing accelerator density and the efficiency of the high-speed communication fabric.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="d-networking-hardware-high-speed-interconnects-switches-nics">D. Networking Hardware: High-Speed Interconnects, Switches, NICs<a href="#d-networking-hardware-high-speed-interconnects-switches-nics" class="hash-link" aria-label="Direct link to D. Networking Hardware: High-Speed Interconnects, Switches, NICs" title="Direct link to D. Networking Hardware: High-Speed Interconnects, Switches, NICs">​</a></h2>
+<p>Traditional data centers:</p>
+<ul>
+<li>Ethernet (1–100 Gbps)</li>
+<li>Hierarchical network (ToR, aggregation, core switches)</li>
+<li>Standard NICs for connectivity</li>
+</ul>
+<p>AI data centers:</p>
+<ul>
+<li>Focus on backend/scale-out fabric for accelerator interconnect</li>
+<li>Must provide extremely high bandwidth and low latency</li>
+<li>Key technologies:<!-- -->
+<ul>
+<li><strong>InfiniBand:</strong>
+<ul>
+<li>High bandwidth (400–800 Gbps/port), low latency, native RDMA</li>
+<li>Proven for HPC/AI, but concerns about scalability, cost, vendor lock-in</li>
+</ul>
+</li>
+<li><strong>High-Speed Ethernet with RoCE:</strong>
+<ul>
+<li>400/800 Gbps, RDMA over Converged Ethernet</li>
+<li>Relies on PFC/ECN for lossless behavior</li>
+<li>Broader ecosystem, lower cost, better interoperability</li>
+<li>Performance gap with InfiniBand is narrowing</li>
+</ul>
+</li>
+<li><strong>Proprietary Scale-Up Interconnects:</strong>
+<ul>
+<li>E.g., NVIDIA NVLink, Google ICI, AWS NeuronLink</li>
+<li>Extremely high bandwidth within/between nodes (e.g., NVLink: 900 GB/s per H100 GPU)</li>
+<li>Crucial for parallelism strategies (tensor parallelism)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Requires high-radix switches, SmartNICs/DPUs, and costly optical transceivers</li>
+</ul>
+<blockquote>
+<p>&quot;The cost and complexity of optical transceivers for high-speed links are significant economic factors.&quot;</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="e-storage-systems-performance-vs-capacity-needs">E. Storage Systems: Performance vs. Capacity Needs<a href="#e-storage-systems-performance-vs-capacity-needs" class="hash-link" aria-label="Direct link to E. Storage Systems: Performance vs. Capacity Needs" title="Direct link to E. Storage Systems: Performance vs. Capacity Needs">​</a></h2>
+<p>Traditional data center storage:</p>
+<ul>
+<li>Focus on capacity, reliability, cost-effectiveness</li>
+<li>DAS, NAS, SAN; mix of HDDs and SSDs</li>
+</ul>
+<p>AI workloads:</p>
+<ul>
+<li>Require high throughput and IOPS to keep accelerators fed</li>
+<li>Key technologies:<!-- -->
+<ul>
+<li><strong>NVMe SSDs:</strong> Fast local storage or high-performance networked tiers</li>
+<li><strong>Parallel File Systems:</strong> Lustre, IBM Spectrum Scale for high aggregate bandwidth</li>
+<li><strong>High-Performance Networked Storage:</strong> Scale-out NAS with NVMe and high-speed networks</li>
+</ul>
+</li>
+<li>Capacity is important, but performance is the primary focus</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="comparative-hardware-specifications">Comparative Hardware Specifications<a href="#comparative-hardware-specifications" class="hash-link" aria-label="Direct link to Comparative Hardware Specifications" title="Direct link to Comparative Hardware Specifications">​</a></h2>
+<table><thead><tr><th style="text-align:left">Feature</th><th style="text-align:left">Traditional DC Server (High-Volume 2U CPU)</th><th style="text-align:left">AI DC Server (NVIDIA DGX H100)</th></tr></thead><tbody><tr><td style="text-align:left"><strong>Primary Processor(s)</strong></td><td style="text-align:left">2 x CPU (Intel Xeon/AMD EPYC)</td><td style="text-align:left">2 x CPU (Intel Xeon Scalable)</td></tr><tr><td style="text-align:left"><strong>Accelerator(s)</strong></td><td style="text-align:left">None / Optional low-power GPU</td><td style="text-align:left">8 x NVIDIA H100 GPU</td></tr><tr><td style="text-align:left"><strong>System Memory (Type/Capacity)</strong></td><td style="text-align:left">DDR4/DDR5, 512GB–2TB</td><td style="text-align:left">DDR5, 2TB</td></tr><tr><td style="text-align:left"><strong>Accelerator Memory (Type/Capacity/Bandwidth)</strong></td><td style="text-align:left">N/A</td><td style="text-align:left">HBM3, 80GB per GPU / 640GB total, 3.35 TB/s per GPU / 26.8 TB/s total</td></tr><tr><td style="text-align:left"><strong>Networking (Backend)</strong></td><td style="text-align:left">10/25/100 Gbps Ethernet</td><td style="text-align:left">8 x 400 Gbps InfiniBand/Ethernet</td></tr><tr><td style="text-align:left"><strong>Storage (Primary Type)</strong></td><td style="text-align:left">SAS/SATA SSDs, HDDs (DAS/NAS/SAN)</td><td style="text-align:left">NVMe SSDs (e.g., 4 x 1.92TB OS, 2 x 3.84TB Cache)</td></tr><tr><td style="text-align:left"><strong>Power Density (Typical Rack)</strong></td><td style="text-align:left">5–20 kW</td><td style="text-align:left">~70 kW (for DGX H100 system)</td></tr><tr><td style="text-align:left"><strong>Cooling (Typical)</strong></td><td style="text-align:left">Air Cooling (CRAC/CRAH)</td><td style="text-align:left">Air-cooled option exists, but high-density clusters often require Liquid Cooling (DLC)</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="key-takeaways">Key Takeaways<a href="#key-takeaways" class="hash-link" aria-label="Direct link to Key Takeaways" title="Direct link to Key Takeaways">​</a></h2>
+<ul>
+<li>AI data centers are built around specialized, high-density, high-bandwidth hardware.</li>
+<li>Accelerators (GPUs, TPUs, custom ASICs) and HBM are the main cost and performance drivers.</li>
+<li>Server and rack designs are dictated by the needs of accelerators and cooling, not by standardization.</li>
+<li>Networking and storage must keep pace with the data demands of large-scale distributed training.</li>
+<li>The economic and physical realities of AI hardware are reshaping the entire data center ecosystem.</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-datacenter/architecture"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Architectural and Infrastructure Divergence</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-datacenter/networking"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Networking Technology in AI Data Centers</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#a-processing-power-cpu-vs-gpu-tpu-and-custom-ai-accelerators" class="table-of-contents__link toc-highlight">A. Processing Power: CPU vs. GPU, TPU, and Custom AI Accelerators</a></li><li><a href="#b-memory-architectures-dram-vs-hbm-capacity-bandwidth-and-cost" class="table-of-contents__link toc-highlight">B. Memory Architectures: DRAM vs. HBM, Capacity, Bandwidth, and Cost</a></li><li><a href="#c-server-design-form-factors-density-and-ai-specific-configurations" class="table-of-contents__link toc-highlight">C. Server Design: Form Factors, Density, and AI-Specific Configurations</a></li><li><a href="#d-networking-hardware-high-speed-interconnects-switches-nics" class="table-of-contents__link toc-highlight">D. Networking Hardware: High-Speed Interconnects, Switches, NICs</a></li><li><a href="#e-storage-systems-performance-vs-capacity-needs" class="table-of-contents__link toc-highlight">E. Storage Systems: Performance vs. Capacity Needs</a></li><li><a href="#comparative-hardware-specifications" class="table-of-contents__link toc-highlight">Comparative Hardware Specifications</a></li><li><a href="#key-takeaways" class="table-of-contents__link toc-highlight">Key Takeaways</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/Executive_Summary">Documentation</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.linkedin.com/company/farmgpu" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://x.com/LebanonJon" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/FarmGPU/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 FarmGPU, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

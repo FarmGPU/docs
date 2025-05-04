@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-ai-datacenter docs-version-current docs-doc-page docs-doc-id-workloads" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Workload Characteristics and Software Ecosystems | FarmGPU</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.farmgpu.net/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.farmgpu.net/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.farmgpu.net/ai-datacenter/workloads"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-ai-datacenter-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-ai-datacenter-current"><meta data-rh="true" property="og:title" content="Workload Characteristics and Software Ecosystems | FarmGPU"><meta data-rh="true" name="description" content="The divergence between traditional and AI data centers extends deeply into the types of computational tasks performed and the software ecosystems that support them."><meta data-rh="true" property="og:description" content="The divergence between traditional and AI data centers extends deeply into the types of computational tasks performed and the software ecosystems that support them."><link data-rh="true" rel="icon" href="/img/fgpu_green.svg"><link data-rh="true" rel="canonical" href="https://docs.farmgpu.net/ai-datacenter/workloads"><link data-rh="true" rel="alternate" href="https://docs.farmgpu.net/ai-datacenter/workloads" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.farmgpu.net/ai-datacenter/workloads" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.d3f4eb79.css">
+<script src="/assets/js/runtime~main.8eec702b.js" defer="defer"></script>
+<script src="/assets/js/main.01e4399a.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/fgpu_green.svg"><link rel="preload" as="image" href="/img/fgpu_white.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/fgpu_green.svg" alt="FarmGPU Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/fgpu_white.svg" alt="FarmGPU Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">FarmGPU</b></a><a class="navbar__item navbar__link" href="/docs/Executive_Summary">Company Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/ai-datacenter/overview">AI Datacenters</a><a href="https://calculator.farmgpu.net" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Calculator<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/FarmGPU/docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/overview">Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/introduction">Introduction: The AI-Driven Data Center Paradigm Shift</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/architecture">Architectural and Infrastructure Divergence</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/hardware">Hardware and Component Specialization</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/networking">Networking Technology in AI Data Centers</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/power">Power and Electrical</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/cooling">Data Center Cooling Evolution for AI</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/ai-datacenter/workloads">Workload Characteristics and Software Ecosystems</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/security">Security and Compliance Landscape</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/operations">Operational Management and Efficiency</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/economics">Economics, Trends, and Future Outlook</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/ai-datacenter/sources">Sources</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Workload Characteristics and Software Ecosystems</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Workload Characteristics and Software Ecosystems</h1></header>
+<blockquote>
+<p>The divergence between traditional and AI data centers extends deeply into the types of computational tasks performed and the software ecosystems that support them.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-computational-task-differentiation">A. Computational Task Differentiation<a href="#a-computational-task-differentiation" class="hash-link" aria-label="Direct link to A. Computational Task Differentiation" title="Direct link to A. Computational Task Differentiation">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p><strong>Traditional Data Centers:</strong></p></div></div>
+<ul>
+<li>Host a wide variety of workloads:<!-- -->
+<ul>
+<li>Transactional processing (financial systems, e-commerce)</li>
+<li>Web serving</li>
+<li>Database management (relational and NoSQL)</li>
+<li>Virtual desktop infrastructure (VDI)</li>
+<li>Email services</li>
+<li>General enterprise applications</li>
+<li>Large-scale batch processing jobs</li>
+</ul>
+</li>
+<li>Workloads are often:<!-- -->
+<ul>
+<li>I/O bound (storage/network speed limited)</li>
+<li>Moderately CPU-bound</li>
+<li>Bursty or unpredictable in traffic patterns</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p><strong>AI-Focused Data Centers:</strong></p></div></div>
+<ul>
+<li>Geared towards compute-bound tasks with massive parallelism</li>
+<li>Two main categories:<!-- -->
+<ul>
+<li><strong>AI Training:</strong>
+<ul>
+<li>Processes colossal, often unstructured datasets (images, video, audio, text)</li>
+<li>Jobs can run for weeks/months, requiring sustained high throughput across thousands of accelerators</li>
+<li>Uses parallelism strategies (data, tensor, pipeline)</li>
+<li>Less sensitive to network latency, but highly dependent on bandwidth and interconnect topology</li>
+</ul>
+</li>
+<li><strong>AI Inference:</strong>
+<ul>
+<li>Uses pre-trained models to make predictions on new data</li>
+<li>Can be batch (throughput-focused) or real-time (latency-critical)</li>
+<li>May run in centralized data centers or at the edge</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&quot;AI training is compute-intensive and bandwidth-hungry, while inference can be either throughput- or latency-driven depending on the application.&quot;</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="b-software-stacks-specialized-ai-frameworks-vs-enterprise-applications">B. Software Stacks: Specialized AI Frameworks vs. Enterprise Applications<a href="#b-software-stacks-specialized-ai-frameworks-vs-enterprise-applications" class="hash-link" aria-label="Direct link to B. Software Stacks: Specialized AI Frameworks vs. Enterprise Applications" title="Direct link to B. Software Stacks: Specialized AI Frameworks vs. Enterprise Applications">​</a></h2>
+<ul>
+<li><strong>Traditional Data Centers:</strong>
+<ul>
+<li>Standard OS (Linux, Windows Server)</li>
+<li>Relational/NoSQL databases (PostgreSQL, MySQL, MongoDB)</li>
+<li>Web servers (Apache, Nginx), middleware, enterprise apps (SAP, Oracle)</li>
+<li>Virtualization management (VMware vSphere, KVM)</li>
+</ul>
+</li>
+<li><strong>AI Data Centers:</strong>
+<ul>
+<li><strong>ML Frameworks:</strong> TensorFlow, PyTorch, JAX</li>
+<li><strong>Accelerator Libraries:</strong> NVIDIA CUDA, cuDNN, NCCL; Google XLA; NVIDIA TensorRT</li>
+<li><strong>MLOps Platforms:</strong> Kubeflow, MLflow, AWS SageMaker, Azure ML, Google Vertex AI</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ai-software-stack-diagram">AI Software Stack Diagram<a href="#ai-software-stack-diagram" class="hash-link" aria-label="Direct link to AI Software Stack Diagram" title="Direct link to AI Software Stack Diagram">​</a></h3>
+<!-- -->
+<p><em>Figure: The AI software stack from hardware to MLOps platforms.</em></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="c-virtualization-and-containerization-strategies">C. Virtualization and Containerization Strategies<a href="#c-virtualization-and-containerization-strategies" class="hash-link" aria-label="Direct link to C. Virtualization and Containerization Strategies" title="Direct link to C. Virtualization and Containerization Strategies">​</a></h2>
+<ul>
+<li><strong>Traditional:</strong>
+<ul>
+<li>Heavy use of hypervisors (VMware ESXi, Hyper-V, KVM)</li>
+<li>VMs for isolation, consolidation, flexibility</li>
+<li>Containers (Docker) often run within VMs for microservices</li>
+</ul>
+</li>
+<li><strong>AI-Focused:</strong>
+<ul>
+<li><strong>Bare Metal:</strong> Preferred for max performance in training</li>
+<li><strong>VMs:</strong> Used for isolation, but can add overhead</li>
+<li><strong>Containers:</strong> Ubiquitous for packaging AI apps, dependencies, and for reproducibility (Kubernetes is standard for orchestration)</li>
+<li>Often a hybrid: containers on bare metal or within VMs, depending on needs</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p><strong>Best Practice:</strong>
+For large-scale AI training, run containers directly on bare metal to maximize accelerator utilization and minimize overhead.</p></div></div>
+<blockquote>
+<p>&quot;The choice between bare metal, VMs, and containers is driven by performance, isolation, and management needs—often resulting in hybrid approaches.&quot;</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="d-orchestration-and-resource-management">D. Orchestration and Resource Management<a href="#d-orchestration-and-resource-management" class="hash-link" aria-label="Direct link to D. Orchestration and Resource Management" title="Direct link to D. Orchestration and Resource Management">​</a></h2>
+<ul>
+<li><strong>Traditional:</strong>
+<ul>
+<li>VM management (vCenter, OpenStack)</li>
+<li>Configuration management (Ansible, Chef, Puppet)</li>
+<li>Basic container orchestration</li>
+</ul>
+</li>
+<li><strong>AI Data Centers:</strong>
+<ul>
+<li>Heavy use of Kubernetes for large-scale, distributed, containerized workloads</li>
+<li>Kubernetes features:<!-- -->
+<ul>
+<li>Deployment, scaling, networking, lifecycle management</li>
+<li>GPU scheduling and management (device plugins, time-slicing, MIG)</li>
+<li>Intelligent placement algorithms (bin-packing, Volcano)</li>
+<li>Autoscaling (HPA, VPA, Cluster Autoscaler)</li>
+</ul>
+</li>
+<li>Other orchestration tools: HashiCorp Nomad, Apache Mesos</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ai-workload-lifecycle-diagram">AI Workload Lifecycle Diagram<a href="#ai-workload-lifecycle-diagram" class="hash-link" aria-label="Direct link to AI Workload Lifecycle Diagram" title="Direct link to AI Workload Lifecycle Diagram">​</a></h3>
+<!-- -->
+<p><em>Figure: The AI workload lifecycle from data collection to monitoring and feedback.</em></p>
+<blockquote>
+<p>&quot;Orchestrating complex distributed training jobs across thousands of GPUs, ensuring fault tolerance, and tracking experiments demands specialized tools and expertise beyond standard DevOps.&quot;</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="key-takeaways">Key Takeaways<a href="#key-takeaways" class="hash-link" aria-label="Direct link to Key Takeaways" title="Direct link to Key Takeaways">​</a></h2>
+<ul>
+<li>AI data centers are optimized for compute-bound, parallel workloads, while traditional centers handle a broader mix.</li>
+<li>The software stack in AI data centers is specialized and tightly integrated with hardware accelerators.</li>
+<li>Containerization and Kubernetes are essential for reproducibility and resource management in AI workflows.</li>
+<li>Orchestration and MLOps platforms are critical for managing the complexity and scale of modern AI development and deployment.</li>
+</ul>
+<h1>VII. Deployment Models and Scalability</h1>
+<p>The ways in which AI infrastructure is deployed and scaled differ significantly based on organizational needs, budget, expertise, and the specific AI workloads being run. Options range from leveraging massive public cloud platforms to building private facilities or utilizing edge computing.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="a-hyperscaler-ai-offerings-vs-traditional-cloud-services">A. Hyperscaler AI Offerings vs. Traditional Cloud Services<a href="#a-hyperscaler-ai-offerings-vs-traditional-cloud-services" class="hash-link" aria-label="Direct link to A. Hyperscaler AI Offerings vs. Traditional Cloud Services" title="Direct link to A. Hyperscaler AI Offerings vs. Traditional Cloud Services">​</a></h2>
+<ul>
+<li><strong>Traditional IaaS Cloud:</strong>
+<ul>
+<li>General-purpose VMs, block/object storage, databases, standard networking</li>
+<li>Scalable and flexible, but often lack specialized, high-performance hardware and optimized fabrics for AI</li>
+</ul>
+</li>
+<li><strong>Hyperscaler AI Offerings (AWS, Azure, GCP):</strong>
+<ul>
+<li><strong>Specialized Hardware Access:</strong> On-demand fleets of latest-gen NVIDIA GPUs, custom AI accelerators (Google TPUs, AWS Trainium/Inferentia, Microsoft Maia)</li>
+<li><strong>Managed AI Platforms:</strong> PaaS solutions (SageMaker, Azure ML, Vertex AI) for the full ML lifecycle</li>
+<li><strong>Scalable Infrastructure:</strong> Massive scale, global reach, and huge ongoing investment</li>
+<li><strong>Optimized Stacks:</strong> Pre-configured environments, optimized drivers, integrated frameworks</li>
+</ul>
+</li>
+<li><strong>Specialized AI Cloud Providers:</strong> (e.g., CoreWeave, Lambda Labs)<!-- -->
+<ul>
+<li>Focus on high-performance GPU compute, custom infrastructure, and tailored pricing/models</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>A diagram here could show deployment models: Public Cloud ↔ Private DC ↔ Hybrid ↔ Edge</p></div></div>
+<blockquote>
+<p>&quot;Hyperscalers are investing hundreds of billions annually in AI-specific capacity, driving innovation and economies of scale that are hard for others to match.&quot;</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="b-private-hybrid-and-colocation-models-for-ai">B. Private, Hybrid, and Colocation Models for AI<a href="#b-private-hybrid-and-colocation-models-for-ai" class="hash-link" aria-label="Direct link to B. Private, Hybrid, and Colocation Models for AI" title="Direct link to B. Private, Hybrid, and Colocation Models for AI">​</a></h2>
+<ul>
+<li><strong>Private AI Data Center:</strong>
+<ul>
+<li>Maximum control over hardware, software, security, and data governance</li>
+<li>Potentially lower TCO for large, sustained workloads</li>
+<li>Requires high CapEx, deep technical expertise, and long lead times</li>
+</ul>
+</li>
+<li><strong>Hybrid AI:</strong>
+<ul>
+<li>Combines private infrastructure with public cloud</li>
+<li>Sensitive data/training in private, burst/scale/inference in public</li>
+<li>Requires robust connectivity and sophisticated management tools</li>
+</ul>
+</li>
+<li><strong>Colocation for AI:</strong>
+<ul>
+<li>Rent space, power, cooling, and network in a third-party facility</li>
+<li>Customer manages their own hardware</li>
+<li>Colocation providers are adapting for high-density, liquid-cooled AI hardware</li>
+<li>Middle ground between fully private and fully public cloud</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&quot;Notably, hyperscalers themselves are often major tenants in colocation facilities to supplement their own buildouts.&quot;</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="c-edge-ai-deployments-use-cases-and-challenges">C. Edge AI Deployments: Use Cases and Challenges<a href="#c-edge-ai-deployments-use-cases-and-challenges" class="hash-link" aria-label="Direct link to C. Edge AI Deployments: Use Cases and Challenges" title="Direct link to C. Edge AI Deployments: Use Cases and Challenges">​</a></h2>
+<ul>
+<li><strong>Edge AI:</strong> Decentralized model where inference occurs closer to the data source (on devices or local edge servers)</li>
+<li><strong>Benefits:</strong>
+<ul>
+<li><em>Reduced Latency:</em> Real-time responses for autonomous driving, robotics, AR/VR</li>
+<li><em>Enhanced Privacy/Security:</em> Local processing reduces data exposure</li>
+<li><em>Bandwidth Savings:</em> Less data sent to the cloud</li>
+<li><em>Improved Reliability:</em> Works even with intermittent connectivity</li>
+</ul>
+</li>
+<li><strong>Challenges:</strong>
+<ul>
+<li><em>Resource Constraints:</em> Limited compute, memory, and power at the edge</li>
+<li><em>Environmental Factors:</em> Harsh conditions (temp, humidity, vibration)</li>
+<li><em>Management Complexity:</em> Deploying, updating, and monitoring thousands/millions of devices</li>
+<li><em>Integration:</em> Legacy systems, diverse hardware</li>
+<li><em>Security:</em> Physical and cyber threats</li>
+</ul>
+</li>
+<li><strong>Use Cases:</strong>
+<ul>
+<li>Smart cities, autonomous vehicles, industrial IoT, smart retail, healthcare, consumer electronics, content delivery</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Edge AI is a counter-trend to centralization, enabling low-latency, privacy-preserving, and resilient AI applications at the network edge.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="economic-realities-and-market-trends">Economic Realities and Market Trends<a href="#economic-realities-and-market-trends" class="hash-link" aria-label="Direct link to Economic Realities and Market Trends" title="Direct link to Economic Realities and Market Trends">​</a></h2>
+<ul>
+<li>Building state-of-the-art AI training facilities requires enormous capital investment (billions for a single large GPU cluster)</li>
+<li>Hyperscalers leverage scale for better pricing, custom silicon, and R&amp;D</li>
+<li>Private AI DCs can offer TCO advantages for sustained workloads, but high CapEx and expertise needs are a barrier</li>
+<li>Specialized providers (e.g., CoreWeave) and edge AI are creating new market opportunities</li>
+</ul>
+<blockquote>
+<p>&quot;The rise of edge AI represents a significant counter-trend to the massive centralization occurring for large-scale training.&quot;</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="key-takeaways-1">Key Takeaways<a href="#key-takeaways-1" class="hash-link" aria-label="Direct link to Key Takeaways" title="Direct link to Key Takeaways">​</a></h2>
+<ul>
+<li>AI deployment models range from public cloud to private, hybrid, colocation, and edge</li>
+<li>Hyperscalers dominate large-scale AI due to capital, scale, and innovation</li>
+<li>Edge AI is growing for latency, privacy, and reliability needs</li>
+<li>Economic and operational realities shape the choice of deployment model</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/ai-datacenter/cooling"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Data Center Cooling Evolution for AI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/ai-datacenter/security"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Security and Compliance Landscape</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#a-computational-task-differentiation" class="table-of-contents__link toc-highlight">A. Computational Task Differentiation</a></li><li><a href="#b-software-stacks-specialized-ai-frameworks-vs-enterprise-applications" class="table-of-contents__link toc-highlight">B. Software Stacks: Specialized AI Frameworks vs. Enterprise Applications</a><ul><li><a href="#ai-software-stack-diagram" class="table-of-contents__link toc-highlight">AI Software Stack Diagram</a></li></ul></li><li><a href="#c-virtualization-and-containerization-strategies" class="table-of-contents__link toc-highlight">C. Virtualization and Containerization Strategies</a></li><li><a href="#d-orchestration-and-resource-management" class="table-of-contents__link toc-highlight">D. Orchestration and Resource Management</a><ul><li><a href="#ai-workload-lifecycle-diagram" class="table-of-contents__link toc-highlight">AI Workload Lifecycle Diagram</a></li></ul></li><li><a href="#key-takeaways" class="table-of-contents__link toc-highlight">Key Takeaways</a></li><li><a href="#a-hyperscaler-ai-offerings-vs-traditional-cloud-services" class="table-of-contents__link toc-highlight">A. Hyperscaler AI Offerings vs. Traditional Cloud Services</a></li><li><a href="#b-private-hybrid-and-colocation-models-for-ai" class="table-of-contents__link toc-highlight">B. Private, Hybrid, and Colocation Models for AI</a></li><li><a href="#c-edge-ai-deployments-use-cases-and-challenges" class="table-of-contents__link toc-highlight">C. Edge AI Deployments: Use Cases and Challenges</a></li><li><a href="#economic-realities-and-market-trends" class="table-of-contents__link toc-highlight">Economic Realities and Market Trends</a></li><li><a href="#key-takeaways-1" class="table-of-contents__link toc-highlight">Key Takeaways</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/Executive_Summary">Documentation</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.linkedin.com/company/farmgpu" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://x.com/LebanonJon" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/FarmGPU/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 FarmGPU, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
