@@ -12,19 +12,31 @@ These major cloud service providers offer a broad range of globally distributed 
 - **Vendor Lock-In:** Complex, platform-specific solutions can make migrating workloads or switching providers a costly, technical challenge.
 - **Limited Availability:** GPU quotas may fluctuate, creating resource bottlenecks and limiting experimentation or scaling for AI-driven initiatives.
 
+### Hyperscaler vs. FarmGPU Pricing & Specs Comparison
+
+Below is a direct comparison of high-end GPU instance offerings from AWS and FarmGPU, highlighting the significant cost savings and similar or superior hardware available through FarmGPU.
+
+**AWS (Hyperscaler) Pricing & Specs**
+
+| Instance Size     | vCPUs | Instance Memory (TiB) | GPU   | GPU memory         | Network Bandwidth (Gbps) | GPUDirect RDMA | GPU Peer to Peer | Instance Storage (TB)      | EBS Bandwidth (Gbps) | Price / Hr |
+|------------------|-------|----------------------|-------|--------------------|--------------------------|----------------|------------------|----------------------------|----------------------|------------|
+| p5.48xlarge      | 192   | 2                    | 8 H100| 640 GB HBM3        | 3200 Gbps EFA            | Yes            | 900 GB/s NVSwitch| 8 x 3.84 NVMe SSD          | 80                   | $98.3      |
+| p5e.48xlarge     | 192   | 2                    | 8 H200| 1128 GB HBM3e      | 3200 Gbps EFA            | Yes            | 900 GB/s NVSwitch| 8 x 3.84 NVMe SSD          | 80                   | $86        |
+| p5en.48xlarge    | 192   | 2                    | 8 H200| 1128 GB HBM3e      | 3200 Gbps EFA            | Yes            | 900 GB/s NVSwitch| 8 x 3.84 NVMe SSD          | 100                  | $86        |
+
+**FarmGPU Pricing & Specs**
+
+| Instance Size | vCPUs | Instance Memory (TiB) | GPU   | GPU memory         | Network Bandwidth (Gbps) | GPUDirect RDMA | GPU Peer to Peer | Instance Storage (TB)      | Storage Bandwidth (Gbps) | Price / Hr |
+|--------------|-------|----------------------|-------|--------------------|--------------------------|----------------|------------------|----------------------------|--------------------------|------------|
+| H100 SXM     | 192   | 2                    | 8 H100| 640 GB HBM3        | 400 Gbps                 | No             | 900 GB/s NVSwitch| 8 x 3.84 NVMe SSD          | 200                      | $24        |
+| H100 NVL     | 192   | 2                    | 8 H200| 1128 GB HBM3e      | 400 Gbps                 | No             | 900 GB/s NVSwitch| 8 x 3.84 NVMe SSD          | 200                      | $22.3      |
+| H200 SXM     | 192   | 2                    | 8 H200| 1128 GB HBM3e      | 800 Gbps                 | No             | 900 GB/s NVSwitch| 8 x 3.84 NVMe SSD          | 200                      | $32        |
+
+*FarmGPU delivers up to 4x lower pricing for comparable or better hardware, with transparent specs and no vendor lock-in.*
+
 ## FarmGPU Differentiator
 
 By focusing exclusively on GPU infrastructure for AI/ML, FarmGPU bypasses hyperscaler overhead, enabling pricing closer to true market rates. Our decentralized approach (via DePIN), combined with enterprise-grade data center standards, ensures reliable access to GPU resources without punitive vendor lock-in or unpredictable quotas.
-
-|                           | **Hyperscalers (AWS, Azure, GCP)**                                                        | **FarmGPU**                                                                                                |
-| ------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **GPU Pricing**           | On‑demand H100/H200 nodes priced 4 – 6 × above market; steep premiums for burst capacity. | Up to **70 % lower** hourly rates; deeper discounts on reserved and spot pools.                            |
-| **Availability & Quotas** | Regional GPU caps and lengthy quota‑increase tickets slow experimentation.                | Elastic pool sized for AI first—no artificial quotas, instant scale‑up.                                    |
-| **Platform Lock‑In**      | Proprietary APIs, managed services, and custom silicon make exit costly.                  | Open‑standards stack (Kubernetes, open storage, standard NICs); migrate in or out with minimal re‑tooling. |
-| **AI Hardware Density**   | Air‑cooled halls limit rack power; mixed‑workload layouts restrict floor space.           | 45 – 130 kW liquid / immersion‑cooled racks purpose‑built for accelerators.                                |
-| **TCO Transparency**      | Bundled egress, software and support fees obscure true training cost.                     | Simple, all‑in pricing—compute, storage, and network broken out clearly.                                   |
-| **Sustainability**        | Average PUE ≈ 1.3–1.5; limited heat‑reuse deployments.                                    | PUE ≈ 1.1, waste‑heat recovery in micro‑edge pods, renewable PPAs under way.                               |
-| **Specialized Support**   | Generic enterprise support teams; AI issues routed through multiple tiers.                | Direct line to NVIDIA / InfiniBand veterans and ML‑ops engineers.                                          |
 
 ## FarmGPU's Lean, GPU-Centric Model
 
