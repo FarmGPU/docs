@@ -20,3 +20,6 @@ Advisor & CTO for Emerging Technologies at iBridge Cloud Technologies. A technol
 
 ### Steven Kaplan
 Advisor & technology thought leader with over 20 years of experience in IT infrastructure and cloud strategy. Formerly Vice President at Nutanix, where he built a global channel program and earned the moniker "ROI Dude," Steven now leads Global Channels at Tessell, driving cloud and data management innovation. An accomplished author and Forbes contributor, his insights on IT leadership and ROI have guided enterprises worldwide. Connect with him on LinkedIn or follow [@ROIdude](https://twitter.com/ROIdude) on Twitter for the latest in enterprise tech trends.
+
+### Nilesh Shah
+Advisor to FarmGPU, and currently VP Business Development, ZeroPoint Technologies. Additionally. He participates and contributes regularly at standards bodies like SNIA, OCP, JEDEC, RISC-V, CXL Consortium. He is regularly invited to speak at Conferences, and has led multiple panels and featured in Analyst/ Press interviews, focused on AI and memory technologies. Previously, Nilesh led Strategic Planning at Intel Corporation's Non Volatile Memory Solutions Group, where he was was responsible for the product planning and launch of the Data Center SSD products and Pathfinding innovations. Nilesh advises several startups in the AI Data Center, memory and GPU space
